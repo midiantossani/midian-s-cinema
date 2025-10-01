@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Midian's Cinema</title>
+    <style>
+      .mouse-memoirs-regular {
+        font-family: "Mouse Memoirs", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      .style-script-regular {
+        font-family: "Style Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .noise-overlay {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 99999;
+        background-image: url("images/figma-like-noise-dots-large.png");
+        background-repeat: repeat;
+        background-size: 80px 80px;
+        opacity: 0.26; /* controla a força geral */
+      }
+
+      .divider {
+        width: 100%;
+        height: 50px; /* altura da faixa */
+        background-image: url("images/divider.svg");
+        background-repeat: repeat-x; /* repete só na horizontal */
+        background-position: center top;
+        background-size: auto 50%; /* ajusta altura automaticamente */
+        line-height: 0; /* impede espaçamento interno */
+        display: block; /* força ser bloco */
+      }
+
+      
+
+      body {
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body class="bg-[#F2EBDF]">
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <header>
+      <nav class="bg-[#C23B1E] border-gray-200">
+        <div
+          class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-2"
+        >
+          <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/images/logo.svg" class="h-16" alt="Midian Logo" />
+          </a>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul
+              class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                  aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="font-[Mouse_Memoirs] text-[#382A19]">
+      <section
+        id="index"
+        class="bg-[url('/images/bg.svg')] bg-size-[auto_1500px] bg-no-repeat bg-center"
+      >
+        <div
+          class="text-center pt-15 flex flex-col items-center justify-center space-y-2"
+        >
+          <h1
+            class="text-6xl font-[Mouse_Memoirs] text-[#C23B1E] font-light text-shadow-lg"
+          >
+            Cinema é <br />
+            AQUI
+          </h1>
+          <p class="text-xl font-[Mouse_Memoirs]">
+            Conheça mais sobre os meus filmes favoritos.
+          </p>
+          <button
+            class="bg-[#D9532E] text-[#FDE099] py-1 px-4 rounded-full border-2 border-black shadow-[3px_3px_0px_0px_#382A19] border-dashed hover:bg-[#FDE099] hover:text-[#C23B1E] transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#C23B1E] -"
+          >
+            Ver Catálogo
+          </button>
+        </div>
+        <img src="/images/popcorn.png" alt="index" class="h-100 mx-auto pt-5" />
+      </section>
+
+      <div class="divider"></div>
+
+      <section id="destaques" class="py-16">
+        <h2
+          class="text-center text-5xl font-bold font-[Style_Script] text-[#C23B1E] text-shadow-sm mb-12"
+        >
+          Destaques
+        </h2>
+
+        <article
+          class="flex gap-6 overflow-x-auto px-6 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent lg:grid lg:grid-cols-4 lg:gap-10 lg:overflow-visible"
+        >
+          <!-- Item -->
+          <div class="flex-shrink-0 lg:flex-shrink w-64">
+            <div
+              class="bg-[url('/images/frame.png')] bg-no-repeat bg-contain bg-center w-64 h-80 relative flex items-center justify-center"
+            >
+              <img
+                src="/images/movie.png"
+                alt="It's a Wonderful Life"
+                class="absolute top-[11.5%] left-[20%] w-[60%] h-[54%] object-cover rounded"
+              />
+              <p
+                class="absolute top-[72%] text-center text-sm mt-2 text-[#FDE099]"
+              >
+                It's a Wonderful Life
+              </p>
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div class="flex-shrink-0 lg:flex-shrink w-64">
+            <div
+              class="bg-[url('/images/frame.png')] bg-no-repeat bg-contain bg-center w-64 h-80 relative flex items-center justify-center px-6 pt-8 pb-10"
+            >
+              <img
+                src="/images/movie.png"
+                alt="Casablanca"
+                class="absolute top-[11.5%] left-[20%] w-[60%] h-[54%] object-cover rounded"
+              />
+              <p
+                class="absolute top-[72%] text-center text-sm mt-2 text-[#FDE099]"
+              >
+                Casablanca
+              </p>
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div class="flex-shrink-0 lg:flex-shrink w-64">
+            <div
+              class="bg-[url('/images/frame.png')] bg-no-repeat bg-contain bg-center w-64 h-80 relative flex items-center justify-center px-6 pt-8 pb-10"
+            >
+              <img
+                src="/images/movie.png"
+                alt="Gone With the Wind"
+                class="absolute top-[11.5%] left-[20%] w-[60%] h-[54%] object-cover rounded"
+              />
+              <p
+                class="absolute top-[72%] text-center text-sm mt-2 text-[#FDE099]"
+              >
+                Gone With the Wind
+              </p>
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div class="flex-shrink-0 lg:flex-shrink w-64">
+            <div
+              class="bg-[url('/images/frame.png')] bg-no-repeat bg-contain bg-center w-64 h-80 relative flex items-center justify-center px-6 pt-8 pb-10"
+            >
+              <img
+                src="/images/movie.png"
+                alt="Breakfast at Tiffany's"
+                class="absolute top-[11.5%] left-[20%] w-[60%] h-[54%] object-cover rounded"
+              />
+              <p
+                class="absolute top-[72%] text-center text-sm mt-2 text-[#FDE099]"
+              >
+                Breakfast at Tiffany's
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <div class="divider"></div>
+
+      <section id="galeria" class="py-16">
+        <h2
+          class="text-center text-5xl font-bold font-[Style_Script] text-[#C23B1E] text-shadow-sm mb-12"
+        >
+          Galeria
+        </h2>
+
+        <div id="film-carousel" class="relative w-full py-6 mb-12">
+          <!-- Wrapper com película -->
+          <div
+            class="flex overflow-x-hidden scroll-smooth transition-all duration-700 bg-[url('images/gallery-frame.png')] bg-repeat-x bg-contain h-auto items-center p-6 ml-8"
+            id="carousel-track"
+          >
+            <!-- Item 1 -->
+            <div class="flex-shrink-0 w-32 h-48 mx-4">
+              <img
+                src="images/casablanca.png"
+                alt="Movie 1"
+                class="w-full h-full object-cover shadow-lg"
+              />
+            </div>
+
+            <!-- Item 2 -->
+            <div class="flex-shrink-0 w-32 h-48 mx-4">
+              <img
+                src="images/movie.png"
+                alt="Movie 2"
+                class="w-full h-full object-cover shadow-lg"
+              />
+            </div>
+
+            <!-- Item 3 -->
+            <div class="flex-shrink-0 w-32 h-48 mx-4">
+              <img
+                src="images/casablanca.png"
+                alt="Movie 3"
+                class="w-full h-full object-cover shadow-lg"
+              />
+            </div>
+
+            <!-- Item 4 -->
+            <div class="flex-shrink-0 w-32 h-48 mx-4">
+              <img
+                src="images/movie.png"
+                alt="Movie 4"
+                class="w-full h-full object-cover shadow-lg"
+              />
+            </div>
+
+            <!-- Item 5 -->
+            <div class="flex-shrink-0 w-32 h-48 mx-4">
+              <img
+                src="images/movie.png"
+                alt="Movie 5"
+                class="w-full h-full object-cover shadow-lg"
+              />
+            </div>
+          </div>
+
+          <!-- Botão anterior -->
+          <button
+            onclick="scrollCarousel(-1)"
+            class="absolute top-1/2 left-0 -translate-y-1/2 z-30 flex items-center justify-center h-10 w-10 rounded-full bg-white/60 hover:bg-white/80 shadow-lg"
+          >
+            <svg
+              class="w-5 h-5 text-black"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 1 1 5l4 4"
+              />
+            </svg>
+          </button>
+
+          <!-- Botão próximo -->
+          <button
+            onclick="scrollCarousel(1)"
+            class="absolute top-1/2 right-0 -translate-y-1/2 z-30 flex items-center justify-center h-10 w-10 rounded-full bg-white/60 hover:bg-white/80 shadow-lg"
+          >
+            <svg
+              class="w-5 h-5 text-black"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section id="catalogo" class="py-6 mb-12">
+        <h2
+          class="text-center text-5xl font-bold font-[Style_Script] text-[#C23B1E] text-shadow-sm mb-20"
+        >
+          Catálogo
+        </h2>
+
+        <div class="overflow-x-auto mt-4 overflow-y-hidden">
+          <div
+            class="relative flex bg-[url('images/catalogo-frame.png')] bg-no-repeat bg-contain bg-center w-[1080px] h-[513px] items-center p-6"
+          >
+            <!-- Menu lateral como Tabs Flowbite -->
+            <ul
+              class="flex flex-col space-y-4 text-sm font-medium text-[#382A19] w-48 mt-40 ml-40 overflow-y-auto h-[300px]"
+              id="movie-tabs"
+              data-tabs-toggle="#movie-tabs-content"
+              role="tablist"
+            >
+              <li>
+                <button
+                  class="inline-flex items-center px-4 py-3 text-[#382A19] bg-[#F2EBDF] rounded-lg w-full"
+                  type="button"
+                  role="tab"
+                  aria-controls="all"
+                  aria-selected="true"
+                  data-tabs-target="#all"
+                >
+                  Todos os filmes
+                </button>
+              </li>
+
+              <li>
+                <button
+                  class="inline-flex items-center px-4 py-3 rounded-lg text-[#382A19] bg-[#F2EBDF] w-full"
+                  type="button"
+                  role="tab"
+                  aria-controls="comedy"
+                  aria-selected="false"
+                  data-tabs-target="#comedy"
+                >
+                  Comédia
+                </button>
+              </li>
+
+              <li>
+                <button
+                  class="inline-flex items-center px-4 py-3 rounded-lg text-[#382A19] bg-[#F2EBDF] w-full"
+                  type="button"
+                  role="tab"
+                  aria-controls="romance"
+                  aria-selected="false"
+                  data-tabs-target="#romance"
+                >
+                  Romance
+                </button>
+              </li>
+
+              <li>
+                <button
+                  class="inline-flex items-center px-4 py-3 rounded-lg text-[#382A19] bg-[#F2EBDF] w-full"
+                  type="button"
+                  role="tab"
+                  aria-controls="drama"
+                  aria-selected="false"
+                  data-tabs-target="#drama"
+                >
+                  Drama
+                </button>
+              </li>
+
+              <li>
+                <button
+                  class="inline-flex items-center px-4 py-3 rounded-lg text-[#382A19] bg-[#F2EBDF] w-full"
+                  type="button"
+                  role="tab"
+                  aria-controls="suspense"
+                  aria-selected="false"
+                  data-tabs-target="#suspense"
+                >
+                  Suspense
+                </button>
+              </li>
+              <li>
+                <button
+                  class="inline-flex items-center px-4 py-3 rounded-lg text-[#382A19] bg-[#F2EBDF] w-full"
+                  type="button"
+                  role="tab"
+                  aria-controls="series"
+                  aria-selected="false"
+                  data-tabs-target="#series"
+                >
+                  Séries
+                </button>
+              </li>
+              <li>
+                <button
+                  class="inline-flex items-center px-4 py-3 rounded-lg text-[#382A19] bg-[#F2EBDF] w-full text-[#382A19]"
+                  type="button"
+                  role="tab"
+                  aria-controls="programas"
+                  aria-selected="false"
+                  data-tabs-target="#programas"
+                >
+                  Programas de TV's
+                </button>
+              </li>
+            </ul>
+
+            <!-- Conteúdo da claquete -->
+            <div
+              class="p-6 bg-white/90 rounded-lg ml-10 mt-40 w-1/2 h-[300px] whitespace-nowrap overflow-x-auto overflow-y-hidden"
+              id="movie-tabs-content"
+            >
+              <!-- Todos os filmes -->
+              <div
+                id="all"
+                class="flex space-x-6"
+                role="tabpanel"
+                aria-labelledby="all-tab"
+              >
+                <div class="inline-block w-48">
+                  <img
+                    src="images/movie.png"
+                    class="w-full h-56 object-cover shadow-md rounded-lg"
+                  />
+                  <p class="text-center text-[#382A19] mt-2">Filme 1</p>
+                </div>
+                <div class="inline-block w-48">
+                  <img
+                    src="images/movie.png"
+                    class="w-full h-56 object-cover shadow-md rounded-lg"
+                  />
+                  <p class="text-center text-[#382A19] mt-2">Filme 2</p>
+                </div>
+                <div class="inline-block w-48">
+                  <img
+                    src="images/movie.png"
+                    class="w-full h-56 object-cover shadow-md rounded-lg"
+                  />
+                  <p class="text-center text-[#382A19] mt-2">Filme 3</p>
+                </div>
+              </div>
+
+              <!-- Comédia -->
+              <div
+                id="comedy"
+                class="hidden flex space-x-6"
+                role="tabpanel"
+                aria-labelledby="comedy-tab"
+              >
+                <div class="inline-block w-48">
+                  <img
+                    src="images/movie.png"
+                    class="w-full h-56 object-cover shadow-md rounded-lg"
+                  />
+                  <p class="text-center text-[#382A19] mt-2">Comédia 1</p>
+                </div>
+                <div class="inline-block w-48">
+                  <img
+                    src="images/movie.png"
+                    class="w-full h-56 object-cover shadow-md rounded-lg"
+                  />
+                  <p class="text-center mt-2">Comédia 2</p>
+                </div>
+              </div>
+
+              <!-- Romance -->
+              <div
+                id="romance"
+                class="hidden flex space-x-6"
+                role="tabpanel"
+                aria-labelledby="romance-tab"
+              >
+                <div class="inline-block w-48">
+                  <img
+                    src="images/movie.png"
+                    class="w-full h-56 object-cover shadow-md rounded-lg"
+                  />
+                  <p class="text-center mt-2">Romance 1</p>
+                </div>
+              </div>
+
+              <!-- Drama -->
+              <div
+                id="drama"
+                class="hidden flex space-x-6"
+                role="tabpanel"
+                aria-labelledby="drama-tab"
+              >
+                <div class="inline-block w-48">
+                  <img
+                    src="images/movie.png"
+                    class="w-full h-56 object-cover shadow-md rounded-lg"
+                  />
+                  <p class="text-center mt-2">Drama 1</p>
+                </div>
+              </div>
+
+              <!-- Suspense -->
+              <div
+                id="suspense"
+                class="hidden flex space-x-6"
+                role="tabpanel"
+                aria-labelledby="suspense-tab"
+              >
+                <div class="inline-block w-48">
+                  <img
+                    src="images/movie.png"
+                    class="w-full h-56 object-cover shadow-md rounded-lg"
+                  />
+                  <p class="text-center mt-2">Suspense 1</p>
+                </div>
+              </div>
+              <!-- Séries -->
+              <div
+                id="series"
+                class="hidden flex space-x-6"
+                role="tabpanel"
+                aria-labelledby="series-tab"
+              >
+                <div class="inline-block w-48">
+                  <img
+                    src="images/movie.png"
+                    class="w-full h-56 object-cover shadow-md rounded-lg"
+                  />
+                  <p class="text-center mt-2">Séries 1</p>
+                </div>
+              </div>
+              <!-- Programas de Tv's -->
+              <div
+                id="programas"
+                class="hidden flex space-x-6"
+                role="tabpanel"
+                aria-labelledby="programas-tab"
+              >
+                <div class="inline-block w-48">
+                  <img
+                    src="images/movie.png"
+                    class="w-full h-56 object-cover shadow-md rounded-lg"
+                  />
+                  <p class="text-center mt-2">Programas 1</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section id="sobre" class="pt-16  relative overflow-hidden">
+        <!-- Título -->
+        <h2
+          class="text-center text-5xl font-bold font-[Style_Script] text-[#C23B1E] text-shadow-sm mb-20"
+        >
+          Sobre <br />
+          esse projeto
+        </h2>
+
+        <!-- Conteúdo principal -->
+        <div class="container max-w-5xl mx-auto px-6 relative">
+          <!-- TEXTO -->
+          <div class="max-w-2xl text-left space-y-4 leading-relaxed text-base">
+            <p>
+              Olá! Me chamo Midian, tenho 28 anos e sou apaixonada pela estética
+              vintage/retrô ✨. Criei este site inspirado nos anos 50 para
+              compartilhar meus filmes, séries e programas favoritos — e também
+              como uma forma divertida de treinar minhas habilidades em web
+              design e programação. É um espaço que mistura nostalgia,
+              criatividade e a magia do cinema em um só lugar.
+            </p>
+            <p>
+              A ideia principal é criar um espaço para reunir e compartilhar
+              meus programas de TV, séries e filmes favoritos, celebrando a
+              magia do cinema de uma forma nostálgica e divertida. Além disso,
+              este site tem como objetivo ser um exercício prático para treinar
+              minhas habilidades em web design e programação, explorando
+              criatividade, usabilidade e conceitos visuais que remetem à
+              estética cinematográfica da época.
+            </p>
+            <p>
+              Mais do que um catálogo, ele é um tributo à atmosfera dos velhos
+              cinemas de rua, onde cada detalhe era pensado para encantar o
+              público.
+            </p>
+          </div>
+
+          <!-- IMAGEM FIXA NO RODAPÉ DA SEÇÃO -->
+          <div class=" pb-62">
+            <img
+              src="images/about-cartoon.png"
+              alt="Ilustração retrô"
+              class="absolute -bottom-20 -right-6 w-60 h-auto object-contain"
+            />
+          </div>
+        </div>
+      </section>
+
+      <div class="divider -mb-6"></div>
+      <!-- bg-[#D9532E] text-[#FDE099] py-1 px-4 rounded-full border-2 border-black shadow-[3px_3px_0px_0px_#382A19] -->
+      <section
+        id="contato"
+        class="relative min-h-screen pt-16 bg-[url('/images/bg.svg')] bg-size-[auto_1500px] bg-no-repeat bg-center flex-col items-center justify-center overflow-hidden"
+      >
+        <div
+          class="text-6xl font-[Mouse_Memoirs] text-[#C23B1E] font-light text-shadow-lg text-center pt-8"
+        >
+          <h2>Gostou?</h2>
+          <p class="text-4xl">
+            Me mande uma <br />
+            mensagem!
+          </p>
+        </div>
+        <form action="" class="ml-4 space-y-2 w-3/4 mt-24">
+          <div class="w-full flex space-x-2">
+            <input
+              type="text"
+              placeholder="Nome"
+              required
+              class="bg-[#F2EBDF] rounded-sm w-full border-[#382A19] shadow-[3px_3px_0px_0px_#382A19]"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              required
+              class="bg-[#F2EBDF] rounded-sm w-full border-[#382A19] shadow-[3px_3px_0px_0px_#382A19]"
+            />
+          </div>
+          <textarea
+            placeholder="Mensagem"
+            required
+            class="bg-[#F2EBDF] rounded-sm w-full border-[#382A19] shadow-[3px_3px_0px_0px_#382A19]"
+          ></textarea>
+          <button
+            type="submit"
+            class="bg-[#C23B1E] w-full p-2 rounded-sm text-[#FDE099] border border-[#382A19] shadow-[3px_3px_0px_0px_#382A19]"
+          >
+            Enviar
+          </button>
+        </form>
+        <div class="">
+          <img
+            src="/images/image-contact.png"
+            alt="index"
+            class="absolute bottom-0 -right-8 w-60 h-70 object-contain"
+          />
+        </div>
+      </section>
+      <footer class="bg-[#C23B1E] text-center text-[#FDE099] py-2">
+        <p>Desenvolvido por Midian</p>
+      </footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script>
+      const track = document.getElementById("carousel-track");
+
+      function scrollCarousel(direction) {
+        const itemWidth = track.querySelector("div").offsetWidth + 32; // largura + margin
+        track.scrollBy({ left: direction * itemWidth, behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>
